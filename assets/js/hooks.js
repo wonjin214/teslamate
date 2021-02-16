@@ -91,8 +91,8 @@ import {
   CircleMarker,
 } from "leaflet";
 
-import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerShadow from "leaflet/dist/images/marker-shadow.png";
+import markerIcon from "../css/images/marker-icon.png";
+import markerShadow from "../css/images/marker-shadow.png";
 
 const icon = new Icon({
   iconUrl: markerIcon,
@@ -169,7 +169,6 @@ export const SimpleMap = {
       keyboard: false,
       scrollWheelZoom: false,
       tap: false,
-      dragging: false,
       touchZoom: false,
     });
 
@@ -205,12 +204,8 @@ export const TriggerChange = {
 export const Map = {
   mounted() {
     Promise.all([
-      import(
-        /* webpackPreload: true, webpackChunkName: "geo" */ "leaflet-control-geocoder"
-      ),
-      import(
-        /* webpackPreload: true, webpackChunkName: "geo" */ "@geoman-io/leaflet-geoman-free"
-      ),
+      import("leaflet-control-geocoder"),
+      import("@geoman-io/leaflet-geoman-free"),
     ]).then(() => {
       const geoFence = (name) =>
         document.querySelector(`input[name='geo_fence[${name}]']`);
