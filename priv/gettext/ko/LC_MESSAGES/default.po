@@ -93,7 +93,7 @@ msgstr "충전예약됨"
 #, elixir-format
 #: lib/teslamate_web/live/car_live/summary.html.leex:49
 msgid "Plugged In"
-msgstr "충전 준비됨"
+msgstr "충전기 연결"
 
 #, elixir-format
 #: lib/teslamate_web/live/car_live/summary.html.leex:180
